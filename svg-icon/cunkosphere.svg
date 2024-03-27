@@ -8,12 +8,13 @@
     <rect x="0" y="0" width="100%" height="100%" id="space"/>
     <text x="100" y="15" font-size="12" text-anchor="middle" fill="white">The Cunkosphere</text>
     <circle cx="100" cy="100" r="20" id="sun"/>
-    <circle cx="140" cy="100" r="6" id="sun"/>
-    <rect x="170" y="100" width="10" height="15" fill="green"/>
+    <circle cx="135" cy="100" r="6" id="mercury"/>
+    <image x="150" y="93" width="15" href="earth.jpg"/>
+    <rect x="170" y="95" width="12" height="10" id="square-planet"/>
     
     <script>
     <![CDATA[
-    //Javascript
+    
     ]]>
     </script>
 </svg>

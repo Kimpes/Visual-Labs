@@ -3,5 +3,13 @@
 }
 
 #sun {
-    fill: yellow
+    fill: yellow;
+}
+
+#square-planet {
+    fill: rgb(20, 255, 30);
+}
+
+#mercury {
+    fill: rgb(195, 79, 41);
 }
