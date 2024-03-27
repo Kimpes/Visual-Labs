@@ -6,15 +6,61 @@
     <defs>
     </defs>
     <rect x="0" y="0" width="100%" height="100%" id="space"/>
-    <text x="100" y="15" font-size="12" text-anchor="middle" fill="white">The Cunkosphere</text>
-    <circle cx="100" cy="100" r="20" id="sun"/>
+    <circle cx="100" cy="100" r="20" id="sun" fill="yellow"/>
     <circle cx="135" cy="100" r="6" id="mercury"/>
-    <image x="150" y="93" width="15" href="earth.jpg"/>
-    <rect x="170" y="95" width="12" height="10" id="square-planet"/>
+    <g id="earth-orbit">
+        <image x="150" y="93" width="16" href="earth.jpg" id="earth"/>
+    </g>
+    <circle cx="180" cy="100" r="12" id="gas"/>
+    <text x="100" y="15" font-size="12" text-anchor="middle" fill="white">The Cunkosphere</text>
     
     <script>
     <![CDATA[
-    
+        let ORBIT_SPEED = 3;
+        const DAY_CYCLE_SPEED = 4;
+
+        let earthOrbit = 0;
+        let earthDayCycle = 0;
+        let mercuryOrbit = 0;
+        let gasOrbit = 0;
+
+        let sunElement = document.getElementById("sun");
+        let mercuryElement = document.getElementById("mercury");
+        let earthOrbitElement = document.getElementById("earth-orbit");
+        let earthElement = document.getElementById("earth");
+        let gasElement = document.getElementById("gas");
+
+        sunElement.addEventListener("click", (e) => {
+            e.target.style.fill == "red" 
+            ? e.target.style.fill = "yellow"
+            : e.target.style.fill = "red"
+
+            ORBIT_SPEED *= -1;
+        });
+
+        let earthOrbitInterval = setInterval(() => {
+            earthOrbit += ORBIT_SPEED * 0.5;
+            rotation = earthOrbitElement.getAttribute("transform")
+            earthOrbitElement.setAttribute("transform", `rotate(${earthOrbit} 100 100)`)
+
+            earthDayCycle += DAY_CYCLE_SPEED;
+            dayCycle = earthElement.getAttribute("transform");
+            earthX = earthElement.getAttribute("x")*1;
+            earthY = earthElement.getAttribute("y")*1;
+            earthElement.setAttribute("transform", `rotate(${earthDayCycle} ${earthX + 8} ${earthY + 8})`)
+        }, 30);
+
+        let mercuryOrbitInterval = setInterval(() => {
+            mercuryOrbit += ORBIT_SPEED * 1.4;
+            rotation = mercuryElement.getAttribute("transform")
+            mercuryElement.setAttribute("transform", `rotate(${mercuryOrbit} 100 100)`)
+        }, 30);
+
+        let gasOrbitInterval = setInterval(() => {
+            gasOrbit += ORBIT_SPEED * 0.1;
+            rotation = gasElement.getAttribute("transform")
+            gasElement.setAttribute("transform", `rotate(${gasOrbit} 100 100)`)
+        }, 30);
     ]]>
     </script>
 </svg>

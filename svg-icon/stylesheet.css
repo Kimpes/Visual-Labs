@@ -2,11 +2,13 @@
     fill: black;
 }
 
-#sun {
-    fill: yellow;
+#sun:hover {
+    stroke-width: 1px;
+    stroke: white;
+    cursor: pointer;
 }
 
-#square-planet {
+#gas {
     fill: rgb(20, 255, 30);
 }
 
