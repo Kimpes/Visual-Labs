@@ -9,7 +9,7 @@
     <circle cx="100" cy="100" r="20" id="sun" fill="yellow"/>
     <circle cx="135" cy="100" r="6" id="mercury"/>
     <g id="earth-orbit">
-        <image x="150" y="93" width="16" href="earth.jpg" id="earth"/>
+        <image x="150" y="93" width="16" href="earth.png" id="earth"/>
     </g>
     <circle cx="180" cy="100" r="12" id="gas"/>
     <text x="100" y="15" font-size="12" text-anchor="middle" fill="white">The Cunkosphere</text>
